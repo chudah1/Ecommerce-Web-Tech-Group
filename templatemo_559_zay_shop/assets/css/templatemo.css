@@ -191,3 +191,189 @@ body, ul, li, p, a, label, input, div {
 
 /* Extra large devices (large desktops, 1200px and up)*/
 @media (min-width: 1200px) {}
+
+
+/* Cart css*/
+h5{
+    margin-right: 15px;
+  }
+
+.table-image {
+  thead {
+    td, th {
+      border: 0;
+      color: #666;
+      font-size: 0.8rem;
+    }
+  }
+  
+  td, th {
+    vertical-align: middle;
+    text-align: center;
+    
+    &.qty {
+      max-width: 2rem;
+    }
+  }
+}
+
+.price {
+  margin-left: 10px;
+}
+
+
+/*this is to vertically centre items for cart*/
+.vertical_align{
+  margin-top: 35px;
+}
+/*cart header*/
+.centre_align{
+  text-align: center;
+}
+
+/*cart remove item button*/
+.td_close{
+  margin-left: 16px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+
+.modal-footer {
+  padding-top: 0rem;
+}
+
+/*cart close button upper right*/
+.cart_close{
+  position:relative;
+  margin-right: 5px;
+  margin-bottom: 30px;
+}
+
+
+/* Account css*/
+button,
+button:active,
+button:focus {
+  outline: none;
+}
+/*login social media icons*/
+.form-area .icon-btn{
+  margin: 10px;
+  color: white;
+  width: 18%;
+  font-weight: 800;
+  background-color: #40a9b4;
+  padding: 0.5em 0;
+  border-radius: 30px;
+  border: none;
+
+}
+.modal-footer2{
+  padding-top: 0rem;
+  height: 50px;
+}
+.signup-section{
+  padding-top: 0;
+  margin-bottom:;
+}
+
+.other-login-text{
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+.social-buttons{
+  margin-top: 5px;
+  margin-bottom: 0;
+  padding-left: 70px;
+
+}
+
+  .font_black{
+  color: black;
+  margin-bottom: 50px;
+}
+  .modal-body {
+    padding: 0;
+  }
+  .btn-close {
+    position: absolute;
+    right: 0;
+    padding: 1em;
+  }
+  .form-area h1 {
+    font-size: 2.3em;
+    font-weight: bold;
+  }
+  .form-area {
+  padding: 3em;
+  max-width: 100%;
+  color: #fff;
+  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+} 
+  
+  .form-control2 {
+    background-color: inherit;
+    color: black;
+    padding-left: 15px;
+    border: 1px solid rgba(34, 89, 94, 0.2);
+    border-radius: 3px;
+    height: 55px;
+    margin-bottom: 30px;
+    width: 100%;
+  }
+  .form-control2::placeholder{
+    font-size: 16px;
+  }
+
+  .form-area .btn {
+  color: white;
+  width: 100%;
+  font-weight: 800;
+  background-color: #40a9b4;
+  padding: 0.5em 0;
+  border-radius: 50px;
+
+}
+.btn.btn-primary {
+  padding: 15px 50px;
+  font-family: alfa slab one;
+  font-size: 20px;
+  letter-spacing: 2px;
+  border-radius: 50px;
+}
+  .form-area .btn:hover {
+    border: solid ;
+    background-color: inherit;
+    color: black;
+    border-color: black;
+  }
+  .form-area .icon-btn:hover {
+    border: solid;
+    background-color: inherit;
+    color: black;
+    border-color: black;
+  }
+  .form-area p {
+    text-align: center;
+    padding-top: 2em;
+    color: black;
+  }
+  .form-area p a {
+    color: #40a9b4;
+    text-decoration: none;
+  }
+  .form-area p a:hover {
+    color: black;
+  }
+
+  @media (max-width: 600px){
+    .form-area{
+        padding: 1.5em;
+    }
+    .form-area h1{
+        font-size: 18px;
+    }
+
+
+  }
