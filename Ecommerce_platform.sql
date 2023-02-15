@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Feb 15, 2023 at 01:30 AM
+-- Generation Time: Feb 15, 2023 at 01:11 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.1.6
 
@@ -88,8 +88,7 @@ INSERT INTO `Cart` (`customer_id`, `product_id`, `Quantity`) VALUES
 CREATE TABLE `customers` (
   `customer_role` int(1) NOT NULL DEFAULT 2,
   `customer_id` int(11) NOT NULL,
-  `firstname` varchar(30) NOT NULL,
-  `lastname` varchar(30) NOT NULL,
+  `customer_username` varchar(20) NOT NULL,
   `university_id` int(11) DEFAULT NULL,
   `email` varchar(50) DEFAULT NULL,
   `customer_password` varchar(255) NOT NULL
@@ -99,21 +98,21 @@ CREATE TABLE `customers` (
 -- Dumping data for table `customers`
 --
 
-INSERT INTO `customers` (`customer_role`, `customer_id`, `firstname`, `lastname`, `university_id`, `email`, `customer_password`) VALUES
-(2, 1, 'Obe', 'Yom', 2, 'oy@gmail.com', ''),
-(2, 2, 'David', 'Agyeman', 3, 'david@gmail.com', ''),
-(2, 3, 'Jena', 'Man', 1, 'jen.manful@gmail.com', ''),
-(2, 4, 'Khal', 'Drogo', 4, 'khai2d@gmail.com', ''),
-(2, 5, 'Lisa', 'Sampson', 5, 'lisasam@gmail.com', ''),
-(2, 6, 'Jim', 'Shrute', 6, 'jim.shr@hotmail.com', ''),
-(2, 7, 'Gabrielle', 'El-Adas', 1, 'gabrielle.eladas@gmail.com', ''),
-(2, 8, 'Baran', 'Quarshie', 4, 'baran.quarshie@gmail.com', ''),
-(2, 9, 'Monet', 'Stanley', 1, 'monet.stanley@gmail.com', ''),
-(2, 10, 'christelle', 'Anoon', 5, 'christelle.anoon@gmail.com', ''),
-(2, 11, 'Bob', 'Hawos', 7, 'sowahb@gmail.com', ''),
-(2, 12, 'James', 'Acquah', 3, 'acquahjames@gmail.com', ''),
-(2, 13, 'Millicent', 'Robinson', 8, 'milliR@gmail.com', ''),
-(2, 14, 'Libby', 'Trapp', 5, 'libby@gmail.com', '');
+INSERT INTO `customers` (`customer_role`, `customer_id`, `customer_username`, `university_id`, `email`, `customer_password`) VALUES
+(2, 1, 'obyom', 2, 'oy@gmail.com', ''),
+(2, 2, 'd.agyeman', 3, 'david@gmail.com', ''),
+(2, 3, 'jenaman', 1, 'jen.manful@gmail.com', ''),
+(2, 4, 'drogo_k', 4, 'khai2d@gmail.com', ''),
+(2, 5, 'lisa', 5, 'lisasam@gmail.com', ''),
+(2, 6, 'sh.jim', 6, 'jim.shr@hotmail.com', ''),
+(2, 7, 'gabby', 1, 'gabrielle.eladas@gmail.com', ''),
+(2, 8, 'bee.q', 4, 'baran.quarshie@gmail.com', ''),
+(2, 9, 'stanley_M', 1, 'monet.stanley@gmail.com', ''),
+(2, 10, 'christelle', 5, 'christelle.anoon@gmail.com', ''),
+(2, 11, 'h.bob', 7, 'sowahb@gmail.com', ''),
+(2, 12, 'acq.james', 3, 'acquahjames@gmail.com', ''),
+(2, 13, 'milly', 8, 'milliR@gmail.com', ''),
+(2, 14, 'trapp_libby', 5, 'libby@gmail.com', '');
 
 -- --------------------------------------------------------
 
