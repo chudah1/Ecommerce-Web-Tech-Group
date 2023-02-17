@@ -20,59 +20,47 @@
 </head>
 <body >
 
-     <!--sign up-->
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
             <div class="modal-body">
-              <a href="index.html">
+                <a href="index.php">
                 <button type="button" class="btn-close btn-close-black" aria-label="Close"></button></a>
                 <div class="form-area bg-white">
-                    <h1 class="text-center font_black" >Sign Up Form</h1>
+                    <h1 class="text-center font_black" >Login Form</h1>
                     <form>
-                      
-                        <div class="mb-3 mt-4">
-                            <input class="form-control3 form-font" id="firstName" placeholder="Your First Name">
-                            <input class="form-control3 form-font form_margin" id="lastName" placeholder="Your Last Name">
-                        </div>
-                       
-                        <div class="mb-3 mt-4">
-
-                          <select class="select form-control2">
-
-                            <option value="1" disabled>Choose University</option>
-                            <option value="2">Ashesi University</option>
-                            <option value="3">KNUST</option>
-                            <option value="4">University of Ghana</option>
-                            <option value="5">UPSA</option>
-                          </select>
-
-                        </div>
-
                         <div class="mb-3 mt-4">
                             <input type="email" class="form-control2 form-font" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Your Email">
                         </div>
                         <div class="mb-3 mt-4">
                             <input type="password" class="form-control2 form-font" id="exampleInputPassword1"placeholder="Your Password">
                         </div>
-
-                        <button type="submit" class="btn btn-light mt-3">SIGN UP</button>
-            
+                        <button type="submit" class="btn btn-light mt-3">LOGIN</button>
+                        <p class="text-center text-muted delimiter">or use a social network</p>
+                        <div class=" justify-content-center social-buttons">
+                        <button type="button" class="icon-btn btn_hover" title="Twitter">
+                          <i class="fab fa-twitter"></i>
+                        </button>
+                        <button type="button" class="icon-btn btn_hover" title="Facebook">
+                          <i class="fab fa-facebook"></i>
+                        </button>
+                        <button type="button" class="icon-btn btn_hover" title="Linkedin">
+                          <i class="fab fa-linkedin"></i>
+                        </button>
+                    </div>
                         
 
                     </form>
                       <div class="modal-footer2 d-flex justify-content-center">
-                        <div class="signup-section"><p>Already Have An Account?  <a href="login.html">Login</a>.</p></div>
+                        <div class="signup-section "><p>New Here? <a href="register.php">Signup</a>.</p></div>
                       </div>
 
                 </div>
             </div>
           </div>
         </div>
-
   
 
 <script src="assets/js/bootstrap.bundle.min.js"></script>
-<script src="assets/js/templatemo.js"></script>
 
 </body>
 </html>
