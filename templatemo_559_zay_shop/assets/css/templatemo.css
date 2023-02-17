@@ -193,6 +193,7 @@ body, ul, li, p, a, label, input, div {
 @media (min-width: 1200px) {}
 
 
+
 /* Cart css*/
 h5{
     margin-right: 15px;
@@ -265,7 +266,7 @@ button:focus {
   background-color: #40a9b4;
   padding: 0.5em 0;
   border-radius: 30px;
-  border: none;
+  border:1px solid #40a9b4;
 
 }
 .modal-footer2{
@@ -319,11 +320,37 @@ button:focus {
     border: 1px solid rgba(34, 89, 94, 0.2);
     border-radius: 3px;
     height: 55px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     width: 100%;
+  
   }
-  .form-control2::placeholder{
-    font-size: 16px;
+  select{
+    font-size: 17.5px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+  }
+  select option{
+    font-size: 16.5px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+  
+  }
+  .form-control3{
+    background-color: inherit;
+    color: black;
+    padding-left: 15px;
+    border: 1px solid rgba(34, 89, 94, 0.2);
+    border-radius: 3px;
+    height: 55px;
+    margin-bottom: 20px;
+    width: 47%;
+    
+  }
+  .form-font::placeholder{
+    font-size: 17px;
+  }
+  .form_margin{
+    margin-left: 4.5%;
   }
 
   .form-area .btn {
@@ -343,13 +370,12 @@ button:focus {
   border-radius: 50px;
 }
   .form-area .btn:hover {
-    border: solid ;
     background-color: inherit;
     color: black;
     border-color: black;
   }
   .form-area .icon-btn:hover {
-    border: solid;
+
     background-color: inherit;
     color: black;
     border-color: black;
@@ -373,6 +399,11 @@ button:focus {
     }
     .form-area h1{
         font-size: 18px;
+    }
+
+    /*css to center the category single products*/
+    .products-centred{
+        margin-left: 50%;
     }
 
 
