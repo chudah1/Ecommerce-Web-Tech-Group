@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!-- Display all products-->
 <head>
     <title>Traquillo - Product Listing Page</title>
     <meta charset="utf-8">
@@ -106,9 +107,9 @@
             <div class="w-100 pt-1 mb-5 text-right">
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="" method="get" class="modal-content modal-body border-0 p-0">
+            <form action="search.php" method="GET" class="modal-content modal-body border-0 p-0">
                 <div class="input-group mb-2">
-                    <input type="text" class="form-control" id="inputModalSearch" name="q" placeholder="Search ...">
+                    <input type="text" class="form-control" id="inputModalSearch" name="search_term" placeholder="Search ...">
                     <button type="submit" class="input-group-text bg-success text-light">
                         <i class="fa fa-fw fa-search text-white"></i>
                     </button>
@@ -203,7 +204,7 @@
                 <button type="button" class="btn-close btn-close-black" data-bs-dismiss="modal" aria-label="Close"></button>
                 <div class="form-area bg-white">
                     <h1 class="text-center font_black" >Login Form</h1>
-                    <form>
+                    <form action="login_processing.php" method="POST">
                         <div class="mb-3 mt-4">
                             <input type="email" class="form-control2" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Your Email">
                         </div>

@@ -248,7 +248,7 @@
                 <button type="button" class="btn-close btn-close-black" data-bs-dismiss="modal" aria-label="Close"></button>
                 <div class="form-area bg-white">
                     <h1 class="text-center font_black" >Sign Up Form</h1>
-                    <form>
+                    <form method="POST" action="processing.php">
                         <div class="mb-3 mt-4">
                             <input class="form-control2" id="firstName" placeholder="Your First Name">
                         </div>
@@ -1004,7 +1004,7 @@
                 <div class="row pt-2">
                     <div class="col-12">
                         <p class="text-left text-light">
-                            Copyright &copy; 2022 Tranquillo 
+                            Copyright &copy; <?php echo date("Y");?> Tranquillo 
                             | Designed by <a rel="sponsored" href="https://templatemo.com" target="_blank">Tranquillo Team</a>
                         </p>
                     </div>
