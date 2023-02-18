@@ -87,11 +87,11 @@
                         <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
                         <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">7</span>
                     </a>
-                    <a class="nav-icon position-relative text-decoration-none" href="login.php">
+                    <a class="nav-icon position-relative text-decoration-none" href="#" data-bs-toggle="modal" data-bs-target="#ModalForm">
                         <i class="fa fa-fw fa-user text-dark mr-3"></i>
                         <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">+99</span>
                     </a>
-                         
+
                 </div>
             </div>
 
@@ -121,75 +121,178 @@
 
     <!-- Cart Modal : When you want to see cart this is what comes up-->
 
-<div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header border-bottom-0">
-        <h5 class="modal-title" id="exampleModalLabel">
-          Your Shopping Cart
-        </h5>
-        <div class="cart_close">
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header border-bottom-0">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                        Your Shopping Cart
+                    </h5>
+                    <div class="cart_close">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                </div>
+                <div class="modal-body">
+                    <table class="table table-image">
+                        <thead>
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col" class="centre_align">Product</th>
+                                <th scope="col" class="centre_align">Price</th>
+                                <th scope="col" class="centre_align">Qty</th>
+                                <th scope="col" class="centre_align">Total</th>
+                                <th scope="col" class="centre_align">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!--Item 1-->
+                            <tr>
+                                <td class="w-25">
+                                    <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/vans.png" class="img-fluid img-thumbnail" alt="Sheep">
+                                </td>
+                                <td>
+                                    <p class="vertical_align">Vans Sk8-Hi MTE Shoes</p>
+                                </td>
+                                <td>
+                                    <p class="vertical_align">89$</p>
+                                </td>
+                                <td class="qty "><input type="text" class="form-control vertical_align" id="input1" value="2"></td>
+                                <td class="vertical_align">
+                                    <p class="vertical_align">178$</p>
+                                </td>
+                                <td>
+                                    <a href="#" class="btn btn-danger btn-sm td_close vertical_align">
+                                        <i class="fa fa-times"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <!--Item 2-->
+                            <tr>
+                                <td class="w-25">
+                                    <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/vans.png" class="img-fluid img-thumbnail" alt="Sheep">
+                                </td>
+                                <td>
+                                    <p class="vertical_align">Vans Sk8-Hi MTE Shoes</p>
+                                </td>
+                                <td>
+                                    <p class="vertical_align">89$</p>
+                                </td>
+                                <td class="qty "><input type="text" class="form-control vertical_align" id="input1" value="2"></td>
+                                <td class="vertical_align">
+                                    <p class="vertical_align">178$</p>
+                                </td>
+                                <td>
+                                    <a href="#" class="btn btn-danger btn-sm td_close vertical_align">
+                                        <i class="fa fa-times"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="d-flex justify-content-end">
+                        <h5>Total: <span class="price text-success">89$</span></h5>
+                    </div>
+                </div>
+                <div class="modal-footer border-top-0 d-flex justify-content-between">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success">Checkout</button>
+                </div>
+            </div>
         </div>
-        
-      </div>
-      <div class="modal-body">
-        <table class="table table-image">
-          <thead>
-            <tr>
-              <th scope="col"></th>
-              <th scope="col" class="centre_align">Product</th>
-              <th scope="col" class="centre_align">Price</th>
-              <th scope="col" class="centre_align">Qty</th>
-              <th scope="col" class="centre_align">Total</th>
-              <th scope="col" class="centre_align">Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!--Item 1-->
-            <tr>
-            <td class="w-25">
-                <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/vans.png" class="img-fluid img-thumbnail" alt="Sheep">
-            </td>
-              <td> <p class="vertical_align">Vans Sk8-Hi MTE Shoes</p></td>
-              <td><p class="vertical_align">89$</p></td>
-              <td class="qty "><input type="text" class="form-control vertical_align" id="input1" value="2"></td>
-              <td class="vertical_align"><p class="vertical_align">178$</p></td>
-              <td>
-                <a href="#" class="btn btn-danger btn-sm td_close vertical_align">
-                  <i class="fa fa-times"></i>
-                </a>
-              </td>
-            </tr> 
-            <!--Item 2-->
-             <tr>
-            <td class="w-25">
-                <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/vans.png" class="img-fluid img-thumbnail" alt="Sheep">
-            </td>
-              <td> <p class="vertical_align">Vans Sk8-Hi MTE Shoes</p></td>
-              <td><p class="vertical_align">89$</p></td>
-              <td class="qty "><input type="text" class="form-control vertical_align" id="input1" value="2"></td>
-              <td class="vertical_align"><p class="vertical_align">178$</p></td>
-              <td>
-                <a href="#" class="btn btn-danger btn-sm td_close vertical_align">
-                  <i class="fa fa-times"></i>
-                </a>
-              </td>
-            </tr>
-          </tbody>
-        </table> 
-        <div class="d-flex justify-content-end">
-          <h5>Total: <span class="price text-success">89$</span></h5>
-        </div>
-      </div>
-      <div class="modal-footer border-top-0 d-flex justify-content-between">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-success">Checkout</button>
-      </div>
     </div>
-  </div>
-</div>
-<!-- End of Cart Modal-->
+    <!-- End of Cart Modal-->
+
+
+    <!-- Account Modal : When you want to see the account this is what comes up-->
+
+    <!--log in-->
+
+    <div class="modal fade" id="ModalForm" tabindex="-1" aria-labelledby="ModalFormLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="btn-close btn-close-black" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <div class="form-area bg-white">
+                        <h1 class="text-center font_black">Login Form</h1>
+                        <form>
+                            <div class="mb-3 mt-4">
+                                <input type="email" class="form-control2" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Your Email">
+                            </div>
+                            <div class="mb-3">
+                                <input type="password" class="form-control2" id="exampleInputPassword1" placeholder="Your Password">
+                            </div>
+                            <button type="submit" class="btn btn-light mt-3">LOGIN</button>
+                            <p class="text-center text-muted delimiter">or use a social network</p>
+                            <div class=" justify-content-center social-buttons">
+                                <button type="button" class="icon-btn btn_hover" title="Twitter">
+                                    <i class="fab fa-twitter"></i>
+                                </button>
+                                <button type="button" class="icon-btn btn_hover" title="Facebook">
+                                    <i class="fab fa-facebook"></i>
+                                </button>
+                                <button type="button" class="icon-btn btn_hover" title="Linkedin">
+                                    <i class="fab fa-linkedin"></i>
+                                </button>
+                            </div>
+
+
+                        </form>
+                        <div class="modal-footer2 d-flex justify-content-center">
+                            <div class="signup-section ">
+                                <p>New Here? <a href="#" data-bs-toggle="modal" data-bs-target="#ModalForm2" data-bs-dismiss="modal">Signup</a>.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--sign up-->
+
+
+
+    <div class="modal fade" id="ModalForm2" tabindex="-1" aria-labelledby="ModalFormLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="btn-close btn-close-black" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <div class="form-area bg-white">
+                        <h1 class="text-center font_black">Sign Up Form</h1>
+                        <form>
+                            <div class="mb-3 mt-4">
+                                <input class="form-control2" id="firstName" placeholder="Your First Name">
+                            </div>
+                            <div class="mb-3 mt-4">
+                                <input class="form-control2" id="firstName" placeholder="Your Last Name">
+                            </div>
+
+                            <div class="mb-3 mt-4">
+                                <input type="email" class="form-control2" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Your Email">
+                            </div>
+                            <div class="mb-3">
+                                <input type="password" class="form-control2" id="exampleInputPassword1" placeholder="Your Password">
+                            </div>
+                            <button type="submit" class="btn btn-light mt-3">SIGN UP</button>
+
+
+
+                        </form>
+                        <div class="modal-footer2 d-flex justify-content-center">
+                            <div class="signup-section">
+                                <p>Already Have An Account? <a href="#" data-bs-toggle="modal" data-bs-target="#ModalForm" data-bs-dismiss="modal">Login</a>.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- End of Account Modal-->
 
 
     <!-- Start Banner Hero -->
@@ -212,7 +315,7 @@
                                 <h1 class="h1 text-success"><b>Tranquillo</b> eCommerce</h1>
                                 <h3 class="h2">Unleash the power of Shopping Online</h3>
                                 <p>
-                                    Tranquillo is an ecommerce web application designed to provide a calm and hassle-free shopping experience. With a user-friendly interface and easy navigation, Tranquillo makes online shopping a breeze. 
+                                    Tranquillo is an ecommerce web application designed to provide a calm and hassle-free shopping experience. With a user-friendly interface and easy navigation, Tranquillo makes online shopping a breeze.
                                 </p>
                             </div>
                         </div>
@@ -230,7 +333,7 @@
                                 <h1 class="h1">Tranquillo</h1>
                                 <h3 class="h2">Shop the Best Deals Online!</h3>
                                 <p>
-                                   The platform offers a wide range of products across categories, making it a one-stop-shop for all your needs. With secure payment options, quick delivery, and 24/7 customer support, Tranquillo ensures that you have a tranquil shopping experience every time. Whether you're looking for the latest fashion trends, home appliances, or anything in between, Tranquillo has you covered.
+                                    The platform offers a wide range of products across categories, making it a one-stop-shop for all your needs. With secure payment options, quick delivery, and 24/7 customer support, Tranquillo ensures that you have a tranquil shopping experience every time. Whether you're looking for the latest fashion trends, home appliances, or anything in between, Tranquillo has you covered.
                                 </p>
                             </div>
                         </div>
@@ -276,23 +379,34 @@
                 </p>
             </div>
         </div>
+        <!-- Outputting the data from the categories coulmn dynamically-->
+        <?php
+        require 'db_config.php';
+        $sql = "SELECT * FROM product_categories";
+        $results = mysqli_query($conn, $sql);
+        $category_name = "";
+        $category_image = "";
+        ?>
         <div class="row">
-            <div class="col-12 col-md-4 p-5 mt-3">
-                <a href="#"><img src="./assets/img/Category_img.jpg" class="rounded-circle img-fluid border"></a>
-                <h5 class="text-center mt-3 mb-3">Stationary</h5>
-                <p class="text-center"><a class="btn btn-success">Go Shop</a></p>
-            </div>
-            <div class="col-12 col-md-4 p-5 mt-3">
-                <a href="#"><img src="./assets/img/Category_img1.jpg" class="rounded-circle img-fluid border"></a>
-                <h2 class="h5 text-center mt-3 mb-3">Decor</h2>
-                <p class="text-center"><a class="btn btn-success">Go Shop</a></p>
-            </div>
-            <div class="col-12 col-md-4 p-5 mt-3">
-                <a href="#"><img src="./assets/img/Category_img2.jpg" class="rounded-circle img-fluid border"></a>
-                <h2 class="h5 text-center mt-3 mb-3">Electronics</h2>
-                <p class="text-center"><a class="btn btn-success">Go Shop</a></p>
-            </div>
+            <?php if ($results) : ?>
+                <?php while ($row = mysqli_fetch_assoc($results)) : ?>
+                    <?php $category_name = $row['category_name'];
+                    $category_image = $row['Category_image'];
+                    ?>
+                    <div class="col-12 col-md-4 p-5 mt-3">
+                        <?php echo '<img class="card-img rounded-0 img-fluid" src= "data:image/png;base64,' . base64_encode($category_image) . '">'; ?>
+
+                        <h5 class="text-center mt-3 mb-3">
+                            <?php echo $category_name; ?>
+                        </h5>
+                        <p class="text-center"><a class="btn btn-success">Go Shop</a></p>
+                    </div>
+                <?php endwhile; ?>
         </div>
+    <?php endif; ?>
+
+
+
     </section>
     <!-- End Categories of The Month -->
 
@@ -302,87 +416,69 @@
         <div class="container py-5">
             <div class="row text-center py-3">
                 <div class="col-lg-6 m-auto">
-                    <h1 class="h1">Featured Product</h1>
+                    <h1 class="h1">Top Rated Products</h1>
                     <p>
                         Reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
                         Excepteur sint occaecat cupidatat non proident.
                     </p>
                 </div>
             </div>
+            <?php
+            $sql_query = "select *, round(avg(rating)) 
+             as `Average rating` from ratings 
+             right join products using(product_id) 
+             group by products.product_name order by avg(rating) desc limit 3";
+            // $sql_query = "SELECT * FROM products";
+            $sql_results = mysqli_query($conn, $sql_query);
+            $rated_product = "";
+            $rated_product_image = "";
+            $ratings = "";
+            $desc = ""
+            ?>
+
             <div class="row">
-                <div class="col-12 col-md-4 mb-4">
-                    <div class="card h-100">
-                        <a href="shop-single.php">
-                            <img src="./assets/img/feature_prod_01.jpg" class="card-img-top" alt="...">
-                        </a>
-                        <div class="card-body">
-                            <ul class="list-unstyled d-flex justify-content-between">
-                                <li>
-                                    <i class="text-warning fa fa-star"></i>
-                                    <i class="text-warning fa fa-star"></i>
-                                    <i class="text-warning fa fa-star"></i>
-                                    <i class="text-muted fa fa-star"></i>
-                                    <i class="text-muted fa fa-star"></i>
-                                </li>
-                                <li class="text-muted text-right">$240.00</li>
-                            </ul>
-                            <a href="shop-single.php" class="h2 text-decoration-none text-dark">Gym Weight</a>
-                            <p class="card-text">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt in culpa qui officia deserunt.
-                            </p>
-                            <p class="text-muted">Reviews (24)</p>
+                <?php if ($sql_results && mysqli_num_rows($sql_results) > 0) : ?>
+                    <?php while ($item = mysqli_fetch_assoc($sql_results)) : ?>
+                        <?php
+                        $rated_product = $item["Product_name"];
+                        $rated_product_image = base64_encode($item["product_image"]);
+                        $price = $item["Unit_price"];
+                        $ratings = $item["Rating"];
+                        $desc = $item["Product_desc"];
+
+
+                        ?>
+
+                        <div class="col-12 col-md-4 mb-4">
+                            <div class="card h-90">
+                                <a href="shop-single.html">
+                                    <img style="height:340px;" class="card-img rounded-0 img-fluid" src="data:image/png;base64,<?php echo $rated_product_image; ?>" alt="<?php echo $rated_product; ?>">
+                                </a>
+                                <div class="card-body">
+                                    <ul class="list-unstyled d-flex justify-content-between">
+                                        <li>
+                                            <?php for ($i = 0; $i < $ratings; $i++) : ?>
+
+                                                <?php echo "<i class='text-warning fa fa-star'></i>"; ?>
+                                            <?php endfor; ?>
+                                        </li>
+                                        <li class="text-muted text-right"><?php echo "$" . $price; ?></li>
+                                    </ul>
+                                    <a href="shop-single.html" class="h2 text-decoration-none text-dark"><?php echo $rated_product; ?></a>
+                                    <p class="card-text">
+                                        <?php echo $desc; ?>
+                                    </p>
+                                    <p class="text-muted">Reviews (24)</p>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-4 mb-4">
-                    <div class="card h-100">
-                        <a href="shop-single.php">
-                            <img src="./assets/img/feature_prod_02.jpg" class="card-img-top" alt="...">
-                        </a>
-                        <div class="card-body">
-                            <ul class="list-unstyled d-flex justify-content-between">
-                                <li>
-                                    <i class="text-warning fa fa-star"></i>
-                                    <i class="text-warning fa fa-star"></i>
-                                    <i class="text-warning fa fa-star"></i>
-                                    <i class="text-muted fa fa-star"></i>
-                                    <i class="text-muted fa fa-star"></i>
-                                </li>
-                                <li class="text-muted text-right">$480.00</li>
-                            </ul>
-                            <a href="shop-single.php" class="h2 text-decoration-none text-dark">Cloud Nike Shoes</a>
-                            <p class="card-text">
-                                Aenean gravida dignissim finibus. Nullam ipsum diam, posuere vitae pharetra sed, commodo ullamcorper.
-                            </p>
-                            <p class="text-muted">Reviews (48)</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-4 mb-4">
-                    <div class="card h-100">
-                        <a href="shop-single.php">
-                            <img src="./assets/img/feature_prod_03.jpg" class="card-img-top" alt="...">
-                        </a>
-                        <div class="card-body">
-                            <ul class="list-unstyled d-flex justify-content-between">
-                                <li>
-                                    <i class="text-warning fa fa-star"></i>
-                                    <i class="text-warning fa fa-star"></i>
-                                    <i class="text-warning fa fa-star"></i>
-                                    <i class="text-warning fa fa-star"></i>
-                                    <i class="text-warning fa fa-star"></i>
-                                </li>
-                                <li class="text-muted text-right">$360.00</li>
-                            </ul>
-                            <a href="shop-single.php" class="h2 text-decoration-none text-dark">Summer Addides Shoes</a>
-                            <p class="card-text">
-                                Curabitur ac mi sit amet diam luctus porta. Phasellus pulvinar sagittis diam, et scelerisque ipsum lobortis nec.
-                            </p>
-                            <p class="text-muted">Reviews (74)</p>
-                        </div>
-                    </div>
-                </div>
+
+                    <?php endwhile; ?>
+                <?php else : ?>
+                    <p>No products found.</p>
+                <?php endif; ?>
             </div>
+
         </div>
     </section>
     <!-- End Featured Product -->
@@ -402,36 +498,36 @@
                         </li>
                         <li>
                             <i class="fa fa-phone fa-fw"></i>
-                            <a class="text-decoration-none" >010-020-0340</a>
+                            <a class="text-decoration-none">010-020-0340</a>
                         </li>
                         <li>
                             <i class="fa fa-envelope fa-fw"></i>
-                            <a class="text-decoration-none" >tanquillo@company.com</a>
+                            <a class="text-decoration-none">tanquillo@company.com</a>
                         </li>
                     </ul>
                 </div>
 
-                 <div class="col-md-4 pt-5">
+                <div class="col-md-4 pt-5">
                     <h2 class="h2 text-light border-bottom pb-3 border-light">Products</h2>
                     <ul class="list-unstyled text-light footer-link-list">
-                        <li><a class="text-decoration-none" >Luxury</a></li>
-                        <li><a class="text-decoration-none" >Sport Wear</a></li>
-                        <li><a class="text-decoration-none" >Men's Shoes</a></li>
-                        <li><a class="text-decoration-none" >Women's Shoes</a></li>
-                        <li><a class="text-decoration-none" >Popular Dress</a></li>
-                        <li><a class="text-decoration-none" >Gym Accessories</a></li>
-                        <li><a class="text-decoration-none" >Sport Shoes</a></li>
+                        <li><a class="text-decoration-none">Luxury</a></li>
+                        <li><a class="text-decoration-none">Sport Wear</a></li>
+                        <li><a class="text-decoration-none">Men's Shoes</a></li>
+                        <li><a class="text-decoration-none">Women's Shoes</a></li>
+                        <li><a class="text-decoration-none">Popular Dress</a></li>
+                        <li><a class="text-decoration-none">Gym Accessories</a></li>
+                        <li><a class="text-decoration-none">Sport Shoes</a></li>
                     </ul>
                 </div>
 
                 <div class="col-md-4 pt-5">
                     <h2 class="h2 text-light border-bottom pb-3 border-light">Further Info</h2>
                     <ul class="list-unstyled text-light footer-link-list">
-                        <li><a class="text-decoration-none" >Home</a></li>
-                        <li><a class="text-decoration-none" >About Us</a></li>
-                        <li><a class="text-decoration-none" >Shop Locations</a></li>
-                        <li><a class="text-decoration-none" >FAQs</a></li>
-                        <li><a class="text-decoration-none" >Contact</a></li>
+                        <li><a class="text-decoration-none">Home</a></li>
+                        <li><a class="text-decoration-none">About Us</a></li>
+                        <li><a class="text-decoration-none">Shop Locations</a></li>
+                        <li><a class="text-decoration-none">FAQs</a></li>
+                        <li><a class="text-decoration-none">Contact</a></li>
                     </ul>
                 </div>
 
@@ -441,20 +537,20 @@
                 <div class="col-12 mb-3">
                     <div class="w-100 my-3 border-top border-light"></div>
                 </div>
-                
 
-        <div class="w-100 bg-black py-3">
-            <div class="container">
-                <div class="row pt-2">
-                    <div class="col-12">
-                        <p class="text-left text-light">
-                            Copyright &copy; 2022 Traquillo 
-                            | Designed by <a rel="sponsored" href="https://templatemo.com" target="_blank">Tranquillo Team</a>
-                        </p>
+
+                <div class="w-100 bg-black py-3">
+                    <div class="container">
+                        <div class="row pt-2">
+                            <div class="col-12">
+                                <p class="text-left text-light">
+                                    Copyright &copy; 2022 Traquillo
+                                    | Designed by <a rel="sponsored" href="https://templatemo.com" target="_blank">Tranquillo Team</a>
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
 
     </footer>
     <!-- End Footer -->
