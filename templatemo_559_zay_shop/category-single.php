@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Display all products-->
 <head>
     <title>Traquillo - Product Listing Page</title>
     <meta charset="utf-8">
@@ -107,9 +106,9 @@
             <div class="w-100 pt-1 mb-5 text-right">
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="search.php" method="GET" class="modal-content modal-body border-0 p-0">
+            <form action="" method="get" class="modal-content modal-body border-0 p-0">
                 <div class="input-group mb-2">
-                    <input type="text" class="form-control" id="inputModalSearch" name="search_term" placeholder="Search ...">
+                    <input type="text" class="form-control" id="inputModalSearch" name="q" placeholder="Search ...">
                     <button type="submit" class="input-group-text bg-success text-light">
                         <i class="fa fa-fw fa-search text-white"></i>
                     </button>
@@ -192,177 +191,17 @@
 </div>
 <!-- End of Cart Modal-->
 
-
- <!-- Account Modal : When you want to see the account this is what comes up-->
-
- <!--log in-->
-
- <div class="modal fade" id="ModalForm" tabindex="-1" aria-labelledby="ModalFormLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-body">
-                <button type="button" class="btn-close btn-close-black" data-bs-dismiss="modal" aria-label="Close"></button>
-                <div class="form-area bg-white">
-                    <h1 class="text-center font_black" >Login Form</h1>
-                    <form action="login_processing.php" method="POST">
-                        <div class="mb-3 mt-4">
-                            <input type="email" class="form-control2" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Your Email">
-                        </div>
-                        <div class="mb-3">
-                            <input type="password" class="form-control2" id="exampleInputPassword1"placeholder="Your Password">
-                        </div>
-                        <button type="submit" class="btn btn-light mt-3">LOGIN</button>
-                        <p class="text-center text-muted delimiter">or use a social network</p>
-                        <div class=" justify-content-center social-buttons">
-                        <button type="button" class="icon-btn btn_hover" title="Twitter">
-                          <i class="fab fa-twitter"></i>
-                        </button>
-                        <button type="button" class="icon-btn btn_hover" title="Facebook">
-                          <i class="fab fa-facebook"></i>
-                        </button>
-                        <button type="button" class="icon-btn btn_hover" title="Linkedin">
-                          <i class="fab fa-linkedin"></i>
-                        </button>
-                    </div>
-                        
-
-                    </form>
-                      <div class="modal-footer2 d-flex justify-content-center">
-                        <div class="signup-section "><p>New Here?  <a href="#" data-bs-toggle="modal" data-bs-target="#ModalForm2" data-bs-dismiss="modal">Signup</a>.</p></div>
-                      </div>
-
-                </div>
-            </div>
-          </div>
-        </div>
-    </div>
-
-     <!--sign up-->
-     <div class="modal fade" id="ModalForm2" tabindex="-1" aria-labelledby="ModalFormLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-body">
-                <button type="button" class="btn-close btn-close-black" data-bs-dismiss="modal" aria-label="Close"></button>
-                <div class="form-area bg-white">
-                    <h1 class="text-center font_black" >Sign Up Form</h1>
-                    <form>
-                        <div class="mb-3 mt-4">
-                            <input class="form-control2" id="firstName" placeholder="Your First Name">
-                        </div>
-                        <div class="mb-3 mt-4">
-                            <input class="form-control2" id="firstName" placeholder="Your Last Name">
-                        </div>
-
-                        <div class="mb-3 mt-4">
-                            <input type="email" class="form-control2" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Your Email">
-                        </div>
-                        <div class="mb-3">
-                            <input type="password" class="form-control2" id="exampleInputPassword1"placeholder="Your Password">
-                        </div>
-                        <button type="submit" class="btn btn-light mt-3">SIGN UP</button>
-            
-                        
-
-                    </form>
-                      <div class="modal-footer2 d-flex justify-content-center">
-                        <div class="signup-section"><p>Already Have An Account?  <a href="#" data-bs-toggle="modal" data-bs-target="#ModalForm" data-bs-dismiss="modal">Login</a>.</p></div>
-                      </div>
-
-                </div>
-            </div>
-          </div>
-        </div>
-    </div>
-
-<!-- End of Account Modal-->
-
-
     <!-- Start Content -->
-    <div class="container py-5">
+    <div class="container py-5 ">
         <div class="row">
 
-            <div class="col-lg-3">
-                <h1 class="h2 pb-4">Categories</h1>
-                <ul class="list-unstyled templatemo-accordion">
+            
 
-                    <!-- for decor -->
-                    <li class="pb-3">
-                        <a class="collapsed d-flex justify-content-between h3 text-decoration-none" href="#">
-                            Decor
-                            <i class="fa fa-fw fa-chevron-circle-down mt-1"></i>
-                        </a>
-                        <ul class="collapse show list-unstyled pl-3">
-                            <li><a class="text-decoration-none" href="#"> to be decided</a></li>
-                            <li><a class="text-decoration-none" href="#"> to be decided</a></li>
-                            <li><a class="text-decoration-none" href="#">To be decided</a></li>
-                        </ul>
-                    </li>
-
-                    <!-- for Stationary -->
-                    <li class="pb-3">
-                        <a class="collapsed d-flex justify-content-between h3 text-decoration-none" href="#">
-                            Stationary
-                            <i class="pull-right fa fa-fw fa-chevron-circle-down mt-1"></i>
-                        </a>
-                        <ul id="collapseTwo" class="collapse list-unstyled pl-3">
-                            <li><a class="text-decoration-none" href="#">Pens</a></li>
-                            <li><a class="text-decoration-none" href="#">Notebooks</a></li>
-                        </ul>
-                    </li>
-
-                     <!-- for electronics -->
-                    <li class="pb-3">
-                        <a class="collapsed d-flex justify-content-between h3 text-decoration-none" href="#">
-                            Electronics
-                            <i class="pull-right fa fa-fw fa-chevron-circle-down mt-1"></i>
-                        </a>
-                        <ul id="collapseThree" class="collapse list-unstyled pl-3">
-                            <li><a class="text-decoration-none" href="#">to be decided</a></li>
-                            <li><a class="text-decoration-none" href="#">to be decided</a></li>
-                            <li><a class="text-decoration-none" href="#">to be decided</a></li>
-                        </ul>
-                    </li> 
-
-                    <!-- for clothes -->
-                    <li class="pb-3">
-                        <a class="collapsed d-flex justify-content-between h3 text-decoration-none" href="#">
-                            Clothes
-                            <i class="pull-right fa fa-fw fa-chevron-circle-down mt-1"></i>
-                        </a>
-                        <ul id="collapseTwo" class="collapse list-unstyled pl-3">
-                            <li><a class="text-decoration-none" href="#">to be decided</a></li>
-                            <li><a class="text-decoration-none" href="#"> to be decided</a></li>
-                        </ul>
-
-                    </li>
-                    
-                </ul>
-            </div>
-
-            <div class="col-lg-9">
+            <div>
                 <div class="row">
-                    
-                        <ul class="list-inline shop-top-menu pb-3 pt-1">
-                            <li class="list-inline-item">
-                                <a class="h3 text-dark text-decoration-none mr-3" href="shop.php">All</a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="h3 text-dark text-decoration-none mr-3" href="category-single.php">Category 1</a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="h3 text-dark text-decoration-none" href="category-single.php">Category 2</a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="h3 text-dark text-decoration-none" href="category-single.php">Category 3</a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="h3 text-dark text-decoration-none" href="category-single.php">Category 4</a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="h3 text-dark text-decoration-none" href="category-single.php">Category 5</a>
-                            </li>
-                        </ul>
-                   
+                    <div class="col-md-6">
+                       <h1 class="h2 pb-4">[Category Name]</h1>
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col-md-4">
