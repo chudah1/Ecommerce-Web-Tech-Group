@@ -27,7 +27,7 @@
                 <button type="button" class="btn-close btn-close-black" aria-label="Close"></button></a>
                 <div class="form-area bg-white">
                     <h1 class="text-center font_black" >Login Form</h1>
-                    <form>
+                    <form action="login_processing.php" method="POST">
                         <div class="mb-3 mt-4">
                             <input type="email" class="form-control2 form-font" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Your Email">
                         </div>

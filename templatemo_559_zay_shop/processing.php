@@ -6,8 +6,6 @@ require 'db_config.php';
 if ($_SERVER['REQUEST_METHOD']=="POST"){
     $username = htmlspecialchars( $_POST["username"]);
     $user_email =htmlspecialchars( $_POST["email"]);
-    $phone_number = htmlspecialchars($_POST["number"]);
-    $gender = htmlspecialchars($_POST["gender"]);
     $user_password = htmlspecialchars($_POST["password"]);
     $confirm_password = htmlspecialchars($_POST["confirm_password"]);
 
