@@ -31,12 +31,12 @@ if (isset($_POST["signin"])){
         $error_array['password'] = 'Password is required';
     }
 
-    // else{
-    //     if (!preg_match("/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/", $user_password)){
-    //         echo "pwd";
-    //         $error_array['password'] = 'Please enter a valid password';
-    //     }
-    // }
+    else{
+        if (!preg_match("/^(?=.*[!@#$%^&*(),.?\":{}|<>])(?=.*[a-z]).{8,}$/", $user_password)){
+            echo "pwd";
+            $error_array['password'] = 'Please enter a valid password';
+        }
+    }
     if(empty($confirm_password)){
         $error_array['confirm_pass'] = 'Please confirm your password';
     }
