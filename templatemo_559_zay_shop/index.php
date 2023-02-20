@@ -151,14 +151,12 @@ include './includes/header.php';
                     $price = $item["Unit_price"];
                     $ratings = $item["Rating"];
                     $desc = $item["Product_desc"];
-
-
                     ?>
 
                     <div class="col-12 col-md-4 mb-4">
                         <div class="card h-90">
                             <a href="shop-single.html">
-                                <img style="height:340px;" class="card-img rounded-0 img-fluid" src="data:image/png;base64,<?php echo $rated_product_image; ?>" alt="<?php echo $rated_product; ?>">
+                                <img style="height:400px;" class="card-img rounded-0 img-fluid" src="data:image/png;base64,<?php echo $rated_product_image; ?>" alt="<?php echo $rated_product; ?>">
                             </a>
                             <div class="card-body">
                                 <ul class="list-unstyled d-flex justify-content-between">

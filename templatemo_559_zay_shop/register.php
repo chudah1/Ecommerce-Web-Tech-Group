@@ -33,22 +33,22 @@
           <form action="processing.php" method="POST">
 
             <div class="mb-3 mt-4">
-              <input class="form-control3 form-font" id="firstName" placeholder="Your First Name">
-              <input class="form-control3 form-font form_margin" id="lastName" placeholder="Your Last Name">
+              <input class="form-control3 form-font" id="firstName" placeholder="Your First Name" name="fname">
+              <input class="form-control3 form-font form_margin" id="lastName" placeholder="Your Last Name" name="lname">
             </div>
 
             <div class="mb-3 mt-4">
 
-              <select class="select form-control2">
+              <select class="select form-control2" name="uni">
                 <?php require 'db_config.php'; 
-                $sql_query  = "SELECT university_name from universities";
+                $sql_query  = "SELECT university_name, university_id from universities";
                 $result = mysqli_query($conn, $sql_query);
-                $index = 0;
 
                 while($row = mysqli_fetch_assoc($result)):
                 ?>
-                <option value="<?php echo $index+1;?>"><?php echo $row["university_name"]; ?></option>
-                <?php $index++; ?>
+                <option value="<?php echo $row["university_id"];?>">
+                <?php echo $row["university_name"]; ?>
+              </option>
 
                 <?php endwhile; ?>
                 
@@ -64,10 +64,10 @@
             </div>
 
             <div class="mb-3 mt-4">
-              <input type="password" class="form-control2 form-font" id="exampleInputPassword1" placeholder="Confirm Password" name="password">
+              <input type="password" class="form-control2 form-font" id="exampleInputPassword1" placeholder="Confirm Password" name="confirm_password">
             </div>
 
-            <input type="submit" class="btn btn-light mt-3">SIGN UP</input>
+            <input type="submit" class="btn btn-light mt-3" name="signin">SIGN UP</input>
 
 
 
