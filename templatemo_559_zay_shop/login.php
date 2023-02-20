@@ -29,10 +29,10 @@
                     <h1 class="text-center font_black" >Login Form</h1>
                     <form action="login_processing.php" method="POST">
                         <div class="mb-3 mt-4">
-                            <input type="email" class="form-control2 form-font" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Your Email">
+                            <input type="email" class="form-control2 form-font" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Your Email" name="email">
                         </div>
                         <div class="mb-3 mt-4">
-                            <input type="password" class="form-control2 form-font" id="exampleInputPassword1"placeholder="Your Password">
+                            <input type="password" class="form-control2 form-font" id="exampleInputPassword1"placeholder="Your Password" name="password">
                         </div>
                         <button type="submit" class="btn btn-light mt-3">LOGIN</button>
                         <p class="text-center text-muted delimiter">or use a social network</p>
