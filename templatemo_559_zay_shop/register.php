@@ -30,8 +30,7 @@
           <button type="button" class="btn-close btn-close-black" aria-label="Close"></button></a>
         <div class="form-area bg-white">
           <h1 class="text-center font_black">Sign Up Form</h1>
-          <form action="processing.php" method="POST">
-
+          <form id="register">
             <div class="mb-3 mt-4">
               <input class="form-control3 form-font" id="firstName" placeholder="Your First Name" name="fname">
               <input class="form-control3 form-font form_margin" id="lastName" placeholder="Your Last Name" name="lname">
@@ -57,17 +56,17 @@
             </div>
 
             <div class="mb-3 mt-4">
-              <input type="email" class="form-control2 form-font" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Your Email" name="email">
+              <input type="email" class="form-control2 form-font" id="email" aria-describedby="emailHelp" placeholder="Your Email" name="email">
             </div>
             <div class="mb-3 mt-4">
-              <input type="password" class="form-control2 form-font" id="exampleInputPassword1" placeholder="Your Password" name="password">
+              <input type="password" class="form-control2 form-font" id="password" placeholder="Your Password" name="password">
             </div>
 
             <div class="mb-3 mt-4">
               <input type="password" class="form-control2 form-font" id="exampleInputPassword1" placeholder="Confirm Password" name="confirm_password">
             </div>
 
-            <input type="submit" class="btn btn-light mt-3" name="signin">SIGN UP</input>
+            <input type="submit" class="btn btn-light mt-3" name="signin" id="register_btn">SIGN UP</input>
 
 
 
@@ -87,7 +86,7 @@
 
   <script src="assets/js/bootstrap.bundle.min.js"></script>
   <script src="assets/js/templatemo.js"></script>
-
+   <script src="script.js"></script>
 </body>
 
 </html>

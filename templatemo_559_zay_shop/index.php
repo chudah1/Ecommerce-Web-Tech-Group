@@ -90,13 +90,16 @@ include './includes/header.php';
     require 'db_config.php';
     $sql = "SELECT * FROM product_categories";
     $results = mysqli_query($conn, $sql);
+    $category_id = "";
     $category_name = "";
     $category_image = "";
     ?>
     <div class="row">
         <?php if ($results) : ?>
             <?php while ($row = mysqli_fetch_assoc($results)) : ?>
-                <?php $category_name = $row['category_name'];
+                <?php 
+                 $category_id = $row["category_id"];
+                $category_name = $row['category_name'];
                 $category_image = $row['Category_image'];
                 ?>
                 <div class="col-12 col-md-4 p-5 mt-3">
@@ -105,7 +108,9 @@ include './includes/header.php';
                     <h5 class="text-center mt-3 mb-3">
                         <?php echo $category_name; ?>
                     </h5>
-                    <p class="text-center"><a class="btn btn-success">Go Shop</a></p>
+                    <p class="text-center"><a class="btn btn-success" 
+                    href="category-single.php?category_id=<?php echo $category_id;?>
+                        ">Go Shop</a></p>
                 </div>
             <?php endwhile; ?>
     </div>
@@ -134,7 +139,6 @@ include './includes/header.php';
              as `Average rating` from ratings 
              right join products using(product_id) 
              group by products.product_name order by avg(rating) desc limit 3";
-        // $sql_query = "SELECT * FROM products";
         $sql_results = mysqli_query($conn, $sql_query);
         $rated_product = "";
         $rated_product_image = "";
@@ -146,6 +150,7 @@ include './includes/header.php';
             <?php if ($sql_results && mysqli_num_rows($sql_results) > 0) : ?>
                 <?php while ($item = mysqli_fetch_assoc($sql_results)) : ?>
                     <?php
+                    $product_id = $item["product_id"];
                     $rated_product = $item["Product_name"];
                     $rated_product_image = base64_encode($item["product_image"]);
                     $price = $item["Unit_price"];
@@ -156,7 +161,7 @@ include './includes/header.php';
                     <div class="col-12 col-md-4 mb-4">
                         <div class="card h-90">
                             <a href="shop-single.html">
-                                <img style="height:400px;" class="card-img rounded-0 img-fluid" src="data:image/png;base64,<?php echo $rated_product_image; ?>" alt="<?php echo $rated_product; ?>">
+                                <img style="height:390px;" class="card-img rounded-0 img-fluid" src="data:image/png;base64,<?php echo $rated_product_image; ?>" alt="<?php echo $rated_product; ?>">
                             </a>
                             <div class="card-body">
                                 <ul class="list-unstyled d-flex justify-content-between">

@@ -19,7 +19,6 @@
 
 </head>
 <body >
-
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
             <div class="modal-body">
@@ -27,14 +26,19 @@
                 <button type="button" class="btn-close btn-close-black" aria-label="Close"></button></a>
                 <div class="form-area bg-white">
                     <h1 class="text-center font_black" >Login Form</h1>
-                    <form action="login_processing.php" method="POST">
+                    <form id="login_form">
                         <div class="mb-3 mt-4">
-                            <input type="email" class="form-control2 form-font" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Your Email" name="email">
+                            <input type="email" class="form-control2 form-font" id="exampleInputEmail1" aria-describedby="emailHelp" 
+                            placeholder="Your Email" name="email" >
+                           
+
+                            <small style="color:black;">
+                          </small>
                         </div>
                         <div class="mb-3 mt-4">
-                            <input type="password" class="form-control2 form-font" id="exampleInputPassword1"placeholder="Your Password" name="password">
+                            <input type="password" class="form-control2 form-font" id="exampleInputPassword1"placeholder="Your Password" name="password" >
                         </div>
-                        <button type="submit" class="btn btn-light mt-3">LOGIN</button>
+                        <button type="submit" id="login_btn" class="btn btn-light mt-3">LOGIN</button>
                         <p class="text-center text-muted delimiter">or use a social network</p>
                         <div class=" justify-content-center social-buttons">
                         <button type="button" class="icon-btn btn_hover" title="Twitter">
@@ -61,6 +65,7 @@
   
 
 <script src="assets/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
 
 </body>
 </html>

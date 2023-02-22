@@ -174,28 +174,7 @@
                                         <i class="fa fa-times"></i>
                                     </a>
                                 </td>
-                            </tr>
-                            <!--Item 2-->
-                            <tr>
-                                <td class="w-25">
-                                    <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/vans.png" class="img-fluid img-thumbnail" alt="Sheep">
-                                </td>
-                                <td>
-                                    <p class="vertical_align">Vans Sk8-Hi MTE Shoes</p>
-                                </td>
-                                <td>
-                                    <p class="vertical_align">89$</p>
-                                </td>
-                                <td class="qty "><input type="text" class="form-control vertical_align" id="input1" value="2"></td>
-                                <td class="vertical_align">
-                                    <p class="vertical_align">178$</p>
-                                </td>
-                                <td>
-                                    <a href="#" class="btn btn-danger btn-sm td_close vertical_align">
-                                        <i class="fa fa-times"></i>
-                                    </a>
-                                </td>
-                            </tr>
+                        </tr>
                         </tbody>
                     </table>
                     <div class="d-flex justify-content-end">

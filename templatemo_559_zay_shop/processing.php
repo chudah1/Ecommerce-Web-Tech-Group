@@ -2,6 +2,7 @@
 
 <?php
 require 'db_config.php';
+$response = array("success"=>false, "message"=>"");
 if (isset($_POST["signin"])) {
     $fname = htmlspecialchars($_POST["fname"]);
     $lname = htmlspecialchars($_POST["lname"]);
@@ -65,19 +66,15 @@ if (isset($_POST["signin"])) {
             // Insert the user into the database
             $query = "INSERT INTO customers (fname, lname, email, customer_password, university_id) values('$fname', '$lname', '$user_email', '$password_hash', '$school_id')";
             if (mysqli_query($conn, $query)) {
-                header('location: login.php');
-                exit();
+                $response["success"] = true;
+               
             } else {
-                header("location: register.php");
-                exit();
+                $response["success"] = false;
             }
         }
-    } else {
-        header("location: register.php");
-        exit();
     }
-} else {
-    header("location: index.php");
-}
+    header('Content-Type: application/json');
+echo json_encode($response);
+} 
 
 ?>
