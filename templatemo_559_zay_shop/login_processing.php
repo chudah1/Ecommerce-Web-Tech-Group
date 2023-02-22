@@ -12,11 +12,11 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
             $response["message"] = "An email is required";
         }
         
-        if(mysqli_num_rows($exec_query)==0){
+        else if(mysqli_num_rows($exec_query)==0){
             $response["message"] = "User with the email does not exist";
         }
     
-    if(empty($user_password)){
+    else if(empty($user_password)){
         $response["message"] = "Password is required";
     }
     else{
