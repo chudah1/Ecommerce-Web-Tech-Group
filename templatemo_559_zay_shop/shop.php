@@ -51,7 +51,9 @@
                                     <ul class="list-unstyled">
                                         <li><a class="btn btn-success text-white" href="shop-single.php"><i class="far fa-heart"></i></a></li>
                                         <li><a class="btn btn-success text-white mt-2" href="shop-single.php"><i class="far fa-eye"></i></a></li>
-                                        <li><a class="btn btn-success text-white mt-2" href="shop-single.php"><i class="fas fa-cart-plus"></i></a></li>
+                                        <li><a class="btn btn-success text-white mt-2 cart"
+                                        data-product_id="<?php echo $row['product_id'];?>">
+                                        <i class="fas fa-cart-plus"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -104,3 +106,6 @@
 
     <!-- Start Footer  (remove all links)-->
     <?php include("./includes/footer.php");?>
+    <script src="assets/js/custom.js"></script>
+</body>
+</html>

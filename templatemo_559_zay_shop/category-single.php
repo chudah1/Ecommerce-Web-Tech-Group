@@ -32,12 +32,14 @@ if (isset($_GET['category_id'])) {
             <div class="col-md-4">
                 <div class="card mb-4 product-wap rounded-0">
                     <div class="card rounded-0">
-                        <img class="card-img rounded-0 img-fluid" src="data:image/png;base64,<?php echo $product_image; ?>" alt="<?php echo $product_name; ?>">
+                        <img style="height: 400px;" class="card-img rounded-0 img-fluid" src="data:image/png;base64,<?php echo $product_image; ?>" alt="<?php echo $product_name; ?>">
                         <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                             <ul class="list-unstyled">
                                 <li><a class="btn btn-success text-white" href="shop-single.php"><i class="far fa-heart"></i></a></li>
                                 <li><a class="btn btn-success text-white mt-2" href="shop-single.php"><i class="far fa-eye"></i></a></li>
-                                <li><a class="btn btn-success text-white mt-2" href="shop-single.php"><i class="fas fa-cart-plus"></i></a></li>
+                                <li><a class="btn btn-success text-white mt-2 cart" data-product_id="<?php echo $row['product_id'];?>"
+                                >
+                                 <i class="fas fa-cart-plus"></i></a></li>
                             </ul>
                         </div>
                     </div>
@@ -72,6 +74,8 @@ if (isset($_GET['category_id'])) {
 
     <!-- Start Footer  (remove all links)-->
     <?php include("./includes/footer.php"); ?>
+    <script src="assets/js/custom.js"></script>
+
 </body>
 
 </html>

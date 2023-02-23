@@ -194,6 +194,7 @@ include './includes/header.php';
 
 
 <?php include("./includes/footer.php"); ?>
+<script src="./assets/js/custom.js"></script>
 </body>
 
 </html>

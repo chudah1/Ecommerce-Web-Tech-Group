@@ -1,8 +1,6 @@
 <?php
 include './includes/header.php';
 ?>
-
-
     <!-- Start Content -->
     <div class="container py-5">
         <?php

@@ -31,8 +31,6 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         }
         else{
             $response["message"]="Password is incorrect";
-            $response['success'] =  false;
-
         }
     }
 }

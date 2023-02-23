@@ -89,7 +89,7 @@
                     </a>
                     <a class="nav-icon position-relative text-decoration-none" href="#" data-bs-toggle="modal" data-bs-target="#cartModal">
                         <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
-                        <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">7</span>
+                        <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark" id="cart-no">7</span>
                     </a>
                     <a class="nav-icon position-relative text-decoration-none" href="login.php">
                         <i class="fa fa-fw fa-user text-dark mr-3"></i>

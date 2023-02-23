@@ -54,7 +54,6 @@ login_form.addEventListener("submit", (e) => {
             window.location.href = "index.php";
         } else {
             // Display error message to the user
-            console.log(data)
             alert(data.message);
         }
     })
