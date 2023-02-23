@@ -73,7 +73,7 @@
                                 <li><i class="text-warning fa fa-star"></i></li>
                                   <?php endfor; ?>
                                 </ul>
-                                <p class="text-center mb-0"><?php echo "$". $row["Unit_price"];?></p>
+                                <p class="text-center mb-0"><?php echo '&#8373;'. $row["Unit_price"];?></p>
                             </div>
                         </div>
                     </div>

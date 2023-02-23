@@ -65,8 +65,7 @@
             <div class="mb-3 mt-4">
               <input type="password" class="form-control2 form-font" id="exampleInputPassword1" placeholder="Confirm Password" name="confirm_password">
             </div>
-
-            <input type="submit" class="btn btn-light mt-3" name="signin" id="register_btn">SIGN UP</input>
+            <button type="submit" id="register_btn" class="btn btn-light mt-3">SIGNUP</button>
 
 
 

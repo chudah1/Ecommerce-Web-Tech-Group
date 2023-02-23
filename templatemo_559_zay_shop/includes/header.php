@@ -1,4 +1,6 @@
-<?php session_start(); ?>
+<?php session_start(); 
+require "db_config.php"
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -127,6 +129,7 @@
         </div>
     </div>
 
+  
 
 
     <!-- Cart Modal : When you want to see cart this is what comes up-->
@@ -143,11 +146,18 @@
                     </div>
 
                 </div>
+                <?php if(isset($_SESSION["user_id"])): ?>
+                 <?php 
+                 $user_id = $_SESSION["user_id"];
+                $sql_query = "SELECT * FROM cart inner join products using(product_id) where customer_id='$user_id'";
+                $result = mysqli_query($conn, $sql_query);
+                $total = 0;
+
+                 if($result):?>
                 <div class="modal-body">
                     <table class="table table-image">
                         <thead>
                             <tr>
-                                <th scope="col"></th>
                                 <th scope="col" class="centre_align">Product</th>
                                 <th scope="col" class="centre_align">Price</th>
                                 <th scope="col" class="centre_align">Qty</th>
@@ -157,19 +167,25 @@
                         </thead>
                         <tbody>
                             <!--Item 1-->
+                            <?php while($row=mysqli_fetch_assoc($result)): ?>
+                                <?php $product_image = base64_encode($row["product_image"]); 
+                                $unit_price = $row["Unit_price"];
+                                $quantity = $row["Quantity"];
+                                ?>
+
                             <tr>
                                 <td class="w-25">
-                                    <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/vans.png" class="img-fluid img-thumbnail" alt="Sheep">
+                                    <img src="data:image/png;base64,<?php echo $product_image; ?>" class="img-fluid img-thumbnail" alt="Sheep">
                                 </td>
+                             
                                 <td>
-                                    <p class="vertical_align">Vans Sk8-Hi MTE Shoes</p>
+                                    <p class="vertical_align"><?php echo '&#8373;'. $unit_price; ?></p>
                                 </td>
-                                <td>
-                                    <p class="vertical_align">89$</p>
-                                </td>
-                                <td class="qty "><input type="text" class="form-control vertical_align" id="input1" value="2"></td>
+                                <td class="qty "><input type="text" class="form-control vertical_align" id="input1" value="<?php echo $quantity; ?>"></td>
                                 <td class="vertical_align">
-                                    <p class="vertical_align">178$</p>
+                                <?php $total+= $unit_price*$quantity; ?>
+
+                                    <p class="vertical_align"><?php echo '&#8373;'. $quantity*$unit_price;?></p>
                                 </td>
                                 <td>
                                     <a href="#" class="btn btn-danger btn-sm td_close vertical_align">
@@ -177,17 +193,20 @@
                                     </a>
                                 </td>
                         </tr>
+                        <?php endwhile; ?>
                         </tbody>
                     </table>
                     <div class="d-flex justify-content-end">
-                        <h5>Total: <span class="price text-success">89$</span></h5>
+                        <h5>Total: <span class="price text-success"><?php echo '&#8373;'.$total;?></span></h5>
                     </div>
                 </div>
+                <?php endif; ?>
                 <div class="modal-footer border-top-0 d-flex justify-content-between">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     <button type="button" class="btn btn-success">Checkout</button>
                 </div>
             </div>
+            <?php endif; ?>
         </div>
     </div>
     <!-- End of Cart Modal-->

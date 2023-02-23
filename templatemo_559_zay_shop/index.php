@@ -171,7 +171,7 @@ include './includes/header.php';
                                             <?php echo "<i class='text-warning fa fa-star'></i>"; ?>
                                         <?php endfor; ?>
                                     </li>
-                                    <li class="text-muted text-right"><?php echo "$" . $price; ?></li>
+                                    <li class="text-muted text-right"><?php echo '&#8373;' . $price; ?></li>
                                 </ul>
                                 <a href="shop-single.html" class="h2 text-decoration-none text-dark"><?php echo $rated_product; ?></a>
                                 <p class="card-text">

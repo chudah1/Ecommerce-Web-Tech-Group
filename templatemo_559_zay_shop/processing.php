@@ -3,7 +3,7 @@
 <?php
 require 'db_config.php';
 $response = array("success"=>false, "message"=>"");
-if (isset($_POST["signin"])) {
+if ($_SERVER["REQUEST_METHOD"]=="POST") {
     $fname = htmlspecialchars($_POST["fname"]);
     $lname = htmlspecialchars($_POST["lname"]);
     $school_id = htmlspecialchars($_POST["uni"]);
@@ -11,41 +11,40 @@ if (isset($_POST["signin"])) {
     $user_password = htmlspecialchars($_POST["password"]);
     $confirm_password = htmlspecialchars($_POST["confirm_password"]);
 
-    $error_array = array('email' => "", "fname" => "", "lname" => "", "password" => "", "confirm_pass" => "");
-
     if (empty($fname)) {
-        $error_array['fname'] = 'Firstname is required';
+        $response['message'] = 'Firstname is required';
     }
-    if (empty($lname)) {
-        $error_array['lname'] = 'Lastname is required';
+    else if (empty($lname)) {
+        $response['message'] = 'Lastname is required';
     }
-    if (empty($user_email)) {
-        $error_array['email'] = 'Email is required';
-    } else {
-        if (!preg_match('/^[a-zA-Z0-9._%+-]+@(ashesi\.edu\.gh|aucampus\.microsoft\.com)$/', $user_email)) {
-            $error_array['email'] = 'Please put a valid ashesi email';
+    else if (empty($user_email)) {
+        $response['message'] = 'Email is required';
+    } 
+    else if (!preg_match('/^[a-zA-Z0-9._%+-]+@(ashesi\.edu\.gh|aucampus\.microsoft\.com)$/', $user_email)) {
+        $response['message']= 'Please put a valid ashesi email';
         }
-    }
+    
 
-    if (empty($user_password)) {
-        $error_array['password'] = 'Password is required';
-    } else {
-        if (!preg_match("/^(?=.*[!@#$%^&*(),.?\":{}|<>])(?=.*[a-z]).{8,}$/", $user_password)) {
-            echo "pwd";
-            $error_array['password'] = 'Please enter a valid password';
+    else if (empty($user_password)) {
+        $response['message']= 'A password is required';
+    } 
+    else if (!preg_match("/^(?=.*[!@#$%^&*(),.?\":{}|<>])(?=.*[a-z]).{8,}$/", $user_password)) {
+        $response['message'] = 'Please enter a valid password';
         }
+    
+    else if (empty($confirm_password)) {
+        $response['message'] = 'Please confirm your password';
+    } 
+    else if ($user_password != $confirm_password) {
+         $response['message'] = 'Please confirm your password';
     }
-    if (empty($confirm_password)) {
-        $error_array['confirm_pass'] = 'Please confirm your password';
-    } else {
-        /* Checking if the password and confirm password are the same. */
-        if ($user_password != $confirm_password) {
-            $error_array['password'] = 'Please confirm your password';
+    
+    else{
+        $response["success"] = true;
         }
-    }
 
     // no errors
-    if (empty($error_array["email"]) and empty($error_array["password"])  and empty($error_array["confirm_pass"]) and empty($error_array["fname"]) and empty($error_array["lname"])) {
+    if ($response["success"]===true and empty($response["message"])) {
         /* This is checking if the email is already in use. */
         $email_check_query = "SELECT * FROM customers WHERE email=?";
         $stmt = mysqli_prepare($conn, $email_check_query);
@@ -56,11 +55,12 @@ if (isset($_POST["signin"])) {
 
         if (!empty($user)) {
             if ($user['email'] === $user_email) {
-                $error_array['email'] = "Email already exists";
+                $response["success"] = true;
+                $response['message'] = "Email already exists";
             }
         }
         // If the email is available, proceed with registration
-        if (empty($error_array["email"])) {
+        if (empty($response["message"])) {
             // Hash the password
             $password_hash = password_hash($user_password, PASSWORD_DEFAULT);
             // Insert the user into the database
@@ -74,7 +74,7 @@ if (isset($_POST["signin"])) {
         }
     }
     header('Content-Type: application/json');
-echo json_encode($response);
-} 
+     echo json_encode($response);
+}
 
 ?>
