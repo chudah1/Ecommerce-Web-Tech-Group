@@ -1,7 +1,7 @@
 <?php include("./includes/header.php");
     require 'db_config.php';
     $sql = "SELECT * FROM product_categories";
-    $products_sql = "SELECT * FROM products inner join ratings using(product_id) order by Unit_price desc";
+    $products_sql = "SELECT * FROM `ratings` right join products using(Product_id) order by Rating desc";
     $results = mysqli_query($conn, $sql);
     $products_result = mysqli_query($conn, $products_sql);
 
@@ -43,6 +43,7 @@
                     <?php while($row=mysqli_fetch_assoc($products_result)): ?>
                     <?php $product_img =  base64_encode($row['product_image']);?>
 
+                    
                     <div class="col-md-4">
                         <div class="card mb-4 product-wap rounded-0">
                             <div class="card rounded-0">
@@ -50,7 +51,7 @@
                                 <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                                     <ul class="list-unstyled">
                                         <li><a class="btn btn-success text-white" href="shop-single.php"><i class="far fa-heart"></i></a></li>
-                                        <li><a class="btn btn-success text-white mt-2" href="shop-single.php"><i class="far fa-eye"></i></a></li>
+                                        <li><a class="btn btn-success text-white mt-2" href="shop-single.php?product_id=<?php echo $row['product_id'];?>"><i class="far fa-eye"></i></a></li>
                                         <li><a class="btn btn-success text-white mt-2 cart"
                                         data-product_id="<?php echo $row['product_id'];?>">
                                         <i class="fas fa-cart-plus"></i></a></li>
@@ -85,7 +86,7 @@
                 
                
                 </div>
-                <div div="row">
+                <!-- <div div="row">
                     <ul class="pagination pagination-lg justify-content-end">
                         <li class="page-item disabled">
                             <a class="page-link active rounded-0 mr-3 shadow-sm border-top-0 border-left-0" href="#" tabindex="-1">1</a>
@@ -97,7 +98,7 @@
                             <a class="page-link rounded-0 shadow-sm border-top-0 border-left-0 text-dark" href="#">3</a>
                         </li>
                     </ul>
-                </div>
+                </div> -->
             </div>
 
         </div>

@@ -1,5 +1,6 @@
 <?php
 session_start();
+if(isset($_SESSION["user_id"])){
 $customer_id = $_SESSION["user_id"];
 require 'db_config.php'; 
 $quantity_query = "SELECT SUM(Quantity) as quantity FROM `cart` WHERE customer_id = '$customer_id'";
@@ -11,4 +12,5 @@ if($result_query){
 
 header('Content-Type: application/json');
 echo json_encode($response);
+}
  ?>

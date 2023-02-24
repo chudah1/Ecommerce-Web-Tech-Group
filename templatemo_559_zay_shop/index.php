@@ -143,7 +143,7 @@ include './includes/header.php';
         $rated_product = "";
         $rated_product_image = "";
         $ratings = "";
-        $desc = ""
+        $desc = "";
         ?>
 
         <div class="row">

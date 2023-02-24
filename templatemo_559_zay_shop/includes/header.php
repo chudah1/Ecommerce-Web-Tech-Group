@@ -16,10 +16,15 @@ require "db_config.php"
     <link rel="stylesheet" href="assets/css/templatemo.css">
     <link rel="stylesheet" href="assets/css/custom.css">
 
-    <!-- Load fonts style after rendering the layout styles -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
+    
+
+      <!-- Load fonts style after rendering the layout styles -->
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
     <link rel="stylesheet" href="assets/css/fontawesome.min.css">
 
+    <!-- Slick -->
+    <link rel="stylesheet" type="text/css" href="assets/css/slick.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/slick-theme.css">
 </head>
 
 <body>
@@ -155,7 +160,7 @@ require "db_config.php"
 
                  if($result):?>
                 <div class="modal-body">
-                    <table class="table table-image">
+                    <table class="table table-image" id="myTable">
                         <thead>
                             <tr>
                                 <th scope="col" class="centre_align">Product</th>
@@ -173,22 +178,22 @@ require "db_config.php"
                                 $quantity = $row["Quantity"];
                                 ?>
 
-                            <tr>
+                            <tr class="remove">
                                 <td class="w-25">
-                                    <img src="data:image/png;base64,<?php echo $product_image; ?>" class="img-fluid img-thumbnail" alt="Sheep">
+                                    <img src="data:image/png;base64,<?php echo $product_image; ?>" class="img-fluid img-thumbnail" alt="<?php echo $row['product_name'];?>">
                                 </td>
                              
                                 <td>
                                     <p class="vertical_align"><?php echo '&#8373;'. $unit_price; ?></p>
                                 </td>
-                                <td class="qty "><input type="text" class="form-control vertical_align" id="input1" value="<?php echo $quantity; ?>"></td>
+                                <td class="qty "><input type="text" disabled class="form-control vertical_align cart-qty" id="input1" value="<?php echo $quantity; ?>"></td>
                                 <td class="vertical_align">
                                 <?php $total+= $unit_price*$quantity; ?>
 
                                     <p class="vertical_align"><?php echo '&#8373;'. $quantity*$unit_price;?></p>
                                 </td>
                                 <td>
-                                    <a href="#" class="btn btn-danger btn-sm td_close vertical_align">
+                                    <a class="btn btn-danger btn-sm td_close vertical_align remove-item" data-action="remove" data-product_id="<?php echo $row['product_id'];?>">
                                         <i class="fa fa-times"></i>
                                     </a>
                                 </td>
