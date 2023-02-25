@@ -55,12 +55,12 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 
         if (!empty($user)) {
             if ($user['email'] === $user_email) {
-                $response["success"] = true;
+                $response["success"] = false;
                 $response['message'] = "Email already exists";
             }
         }
         // If the email is available, proceed with registration
-        if (empty($response["message"])) {
+        if (empty($response["message"]) and $response["success"]==false) {
             // Hash the password
             $password_hash = password_hash($user_password, PASSWORD_DEFAULT);
             // Insert the user into the database
