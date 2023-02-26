@@ -160,7 +160,7 @@ include './includes/header.php';
 
                     <div class="col-12 col-md-4 mb-4">
                         <div class="card h-90">
-                            <a href="shop-single.html">
+                            <a href="shop-single.php?product_id=<?php echo $product_id;?>">
                                 <img style="height:390px;" class="card-img rounded-0 img-fluid" src="data:image/png;base64,<?php echo $rated_product_image; ?>" alt="<?php echo $rated_product; ?>">
                             </a>
                             <div class="card-body">

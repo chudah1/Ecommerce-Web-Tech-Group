@@ -18,7 +18,6 @@ if(register_btn){
     })
     .then(res => res.json())
     .then(data => {
-        console.log(data)
         if (data.success) {
             alert("Registered successfully. Proceed to Login")
             window.location.href = "login.php";

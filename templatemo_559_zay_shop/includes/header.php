@@ -25,6 +25,9 @@ require "db_config.php"
     <!-- Slick -->
     <link rel="stylesheet" type="text/css" href="assets/css/slick.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/slick-theme.css">
+    <!-- Map style -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
+
 </head>
 
 <body>
@@ -157,8 +160,9 @@ require "db_config.php"
                 $sql_query = "SELECT * FROM cart inner join products using(product_id) where customer_id='$user_id'";
                 $result = mysqli_query($conn, $sql_query);
                 $total = 0;
+                ?>
 
-                 if($result):?>
+                 <?php if($result):?>
                 <div class="modal-body">
                     <table class="table table-image" id="myTable">
                         <thead>
