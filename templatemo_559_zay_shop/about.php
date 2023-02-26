@@ -170,7 +170,7 @@ include './includes/header.php';
     
     <!-- End Footer -->
     <?php include("./includes/footer.php"); ?>
-
+<script src="./assets/js/custom.js"></script>
 </body>
 
 </html>

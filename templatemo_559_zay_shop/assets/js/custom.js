@@ -37,7 +37,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }).catch(err=>console.error(err))
           removeItem()
 
-        deleteCartItem()
 
   });
 
@@ -74,20 +73,3 @@ const updateCartIcon= (quantity)=>{
     }
   }
 
-
-// const deleteCartItem = ()=>{
-// var table = document.getElementById("myTable");
-
-// // Loop through each row of the table
-// for (var i = 0; i < table.rows.length; i++) {
-//   var row = table.rows[i];
-//   var input = row.querySelector('input[type="text"]'); // Assumes the input field is a text input
-
-//   // Check if the input value is zero
-//   if (input && input.value === "0") {
-//     // If the value is zero, remove the row from the table
-//     table.remove(row);
-//   }
-// }
-
-// }
