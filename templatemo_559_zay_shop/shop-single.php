@@ -8,7 +8,7 @@ if (!isset($_SESSION["user_id"])) {
     </script>";
 }
 $single_product_id = $_GET['product_id'];
-$sql = "SELECT * FROM PRODUCTS RIGHT JOIN RATINGS USING(product_id) 
+$sql = "SELECT * FROM RATINGS RIGHT JOIN PRODUCTS USING(product_id) 
 inner join product_categories using(category_id) inner join brands using(brand_id) 
 where product_id='$single_product_id'";
 $result = mysqli_query($conn, $sql);
@@ -208,6 +208,7 @@ $query = mysqli_query($conn, $related_products);
             <?php while ($row = mysqli_fetch_assoc($query)) : ?>
                 <?php $pdt_category_image = base64_encode($row["product_image"]);
                 $pdt_category_ratings = $row["Rating"];
+                $pdt_id = $row["product_id"];
 
                 ?>
 
@@ -217,8 +218,8 @@ $query = mysqli_query($conn, $related_products);
                             <img class="card-img rounded-0 img-fluid" src="data:image/png;base64,<?php echo $pdt_category_image; ?>">
                             <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                                 <ul class="list-unstyled">
-                                    <li><a class="btn btn-success text-white" href="shop-single.php"><i class="far fa-heart"></i></a></li>
-                                    <li><a class="btn btn-success text-white mt-2" href="shop-single.php"><i class="far fa-eye"></i></a></li>
+                                    <li><a class="btn btn-success text-white" href="shop-single.php?product_id=<?php echo $pdt_id;?>"><i class="far fa-heart"></i></a></li>
+                                    <li><a class="btn btn-success text-white mt-2" href="shop-single.php?product_id=<?php echo $pdt_id;?>"><i class="far fa-eye"></i></a></li>
                                     <li><a class="btn btn-success text-white mt-2" href="shop-single.php"><i class="fas fa-cart-plus"></i></a></li>
                                 </ul>
                             </div>
