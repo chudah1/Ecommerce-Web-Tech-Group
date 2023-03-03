@@ -24,15 +24,22 @@ else{
 header('Content-Type: application/json');
 echo json_encode($response);
 }
-else if ($action=="display"){
-    $display_query = "select * from wishlist inner join products using(product_id) where `customer_id` = '$customer_id'";
-    $display_exec = mysqli_query($conn, $display_query);
-    if($display_exec){
-        $response["success"] = true;
-    }
 
+   
+
+else{
+     
+    $delete_query = "delete from wishlist where Customer_id='$customer_id' and Product_id='$product_id'";
+    if(mysqli_query($conn, $delete_query)){
+        $response["success"]=true;
+        $response["message"]="Removed from wishlist successfully";
+    }
+    else{
+        $response["message"]="Could not remove from wishlist";
+    }
     header('Content-Type: application/json');
     echo json_encode($response);
+    
 }
 
 ?>

@@ -1,6 +1,7 @@
 <?php
 include './includes/header.php';
 ?>
+
 <!-- Start Banner Hero -->
 <!-- 3 slides -->
 <div id="template-mo-zay-hero-carousel" class="carousel slide" data-bs-ride="carousel">
@@ -103,7 +104,7 @@ include './includes/header.php';
                 $category_image = $row['Category_image'];
                 ?>
                 <div class="col-12 col-md-4 p-5 mt-3">
-                    <?php echo '<img class="card-img rounded-0 img-fluid" src= "data:image/png;base64,' . base64_encode($category_image) . '">'; ?>
+                    <?php echo '<img class="card-img rounded-circle img-fluid" src= "data:image/png;base64,' . base64_encode($category_image) . '">'; ?>
 
                     <h5 class="text-center mt-3 mb-3">
                         <?php echo $category_name; ?>
@@ -129,8 +130,7 @@ include './includes/header.php';
             <div class="col-lg-6 m-auto">
                 <h1 class="h1">Top Rated Products</h1>
                 <p>
-                    Reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                    Excepteur sint occaecat cupidatat non proident.
+                    These are the top three Tranquillo products based on current purchases and their corresponding ratings.
                 </p>
             </div>
         </div>
@@ -177,7 +177,7 @@ include './includes/header.php';
                                 <p class="card-text">
                                     <?php echo $desc; ?>
                                 </p>
-                                <p class="text-muted">Reviews (24)</p>
+                                
                             </div>
                         </div>
                     </div>

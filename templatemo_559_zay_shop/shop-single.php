@@ -20,8 +20,11 @@ $ratings = $result_assoc["Rating"];
 $desc = $result_assoc["Product_desc"];
 $brand = $result_assoc["Brand_name"];
 $category_id = $result_assoc["Category_id"];
-$related_products = "SELECT * FROM RATINGS RIGHT JOIN PRODUCTS USING(product_id) INNER JOIN PRODUCT_CATEGORIES
- USING(category_id) where Category_id='$category_id' and product_id!='$single_product_id'";
+$related_products = "select *, round(avg(rating)) 
+as `Average rating` from ratings 
+right join products using(product_id) 
+where Category_id='$category_id' and product_id!='$single_product_id'
+group by products.product_name order by avg(rating) desc";
 
 $query = mysqli_query($conn, $related_products);
 ?>
@@ -34,98 +37,7 @@ $query = mysqli_query($conn, $related_products);
                 <div class="card mb-3">
                     <img class="card-img img-fluid" src="data:image/png;base64,<?php echo $product_image; ?>" alt="<?php echo $product_name; ?>" id="product-detail">
                 </div>
-                <div class="row">
-                    <!--Start Controls-->
-                    <div class="col-1 align-self-center">
-                        <a href="#multi-item-example" role="button" data-bs-slide="prev">
-                            <i class="text-dark fas fa-chevron-left"></i>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                    </div>
-                    <!--End Controls-->
-                    <!--Start Carousel Wrapper-->
-                    <div id="multi-item-example" class="col-10 carousel slide carousel-multi-item" data-bs-ride="carousel">
-                        <!--Start Slides-->
-                        <div class="carousel-inner product-links-wap" role="listbox">
-
-                            <!--First slide-->
-                            <div class="carousel-item active">
-                                <div class="row">
-                                    <div class="col-4">
-                                        <a href="#">
-                                            <img class="card-img img-fluid" src="assets/img/product_single_01.jpg" alt="Product Image 1">
-                                        </a>
-                                    </div>
-                                    <div class="col-4">
-                                        <a href="#">
-                                            <img class="card-img img-fluid" src="assets/img/product_single_02.jpg" alt="Product Image 2">
-                                        </a>
-                                    </div>
-                                    <div class="col-4">
-                                        <a href="#">
-                                            <img class="card-img img-fluid" src="assets/img/product_single_03.jpg" alt="Product Image 3">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--/.First slide-->
-
-                            <!--Second slide-->
-                            <div class="carousel-item">
-                                <div class="row">
-                                    <div class="col-4">
-                                        <a href="#">
-                                            <img class="card-img img-fluid" src="assets/img/product_single_04.jpg" alt="Product Image 4">
-                                        </a>
-                                    </div>
-                                    <div class="col-4">
-                                        <a href="#">
-                                            <img class="card-img img-fluid" src="assets/img/product_single_05.jpg" alt="Product Image 5">
-                                        </a>
-                                    </div>
-                                    <div class="col-4">
-                                        <a href="#">
-                                            <img class="card-img img-fluid" src="assets/img/product_single_06.jpg" alt="Product Image 6">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--/.Second slide-->
-
-                            <!--Third slide-->
-                            <div class="carousel-item">
-                                <div class="row">
-                                    <div class="col-4">
-                                        <a href="#">
-                                            <img class="card-img img-fluid" src="assets/img/product_single_07.jpg" alt="Product Image 7">
-                                        </a>
-                                    </div>
-                                    <div class="col-4">
-                                        <a href="#">
-                                            <img class="card-img img-fluid" src="assets/img/product_single_08.jpg" alt="Product Image 8">
-                                        </a>
-                                    </div>
-                                    <div class="col-4">
-                                        <a href="#">
-                                            <img class="card-img img-fluid" src="assets/img/product_single_09.jpg" alt="Product Image 9">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--/.Third slide-->
-                        </div>
-                        <!--End Slides-->
-                    </div>
-                    <!--End Carousel Wrapper-->
-                    <!--Start Controls-->
-                    <div class="col-1 align-self-center">
-                        <a href="#multi-item-example" role="button" data-bs-slide="next">
-                            <i class="text-dark fas fa-chevron-right"></i>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </div>
-                    <!--End Controls-->
-                </div>
+             
             </div>
             <!-- col end -->
             <div class="col-lg-7 mt-5">
@@ -213,15 +125,16 @@ $query = mysqli_query($conn, $related_products);
                 ?>
 
                 <div class="p-2 pb-3">
-                    <div class="product-wap card rounded-0">
+                    <div class="card mb-4 product-wap card rounded-0">
                         <div class="card rounded-0">
                             <img class="card-img rounded-0 img-fluid" src="data:image/png;base64,<?php echo $pdt_category_image; ?>">
                             <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
-                                <ul class="list-unstyled">
-                                    <li><a class="btn btn-success text-white" href="shop-single.php?product_id=<?php echo $pdt_id;?>"><i class="far fa-heart"></i></a></li>
-                                    <li><a class="btn btn-success text-white mt-2" href="shop-single.php?product_id=<?php echo $pdt_id;?>"><i class="far fa-eye"></i></a></li>
-                                    <li><a class="btn btn-success text-white mt-2" href="shop-single.php"><i class="fas fa-cart-plus"></i></a></li>
-                                </ul>
+                            <ul class="list-unstyled">
+                                        <li><a class="btn btn-success text-white wishlist"  data-product_id="<?php echo $row['product_id'];?>"><i class="far fa-heart"></i></a></li>
+                                        <li><a class="btn btn-success text-white mt-2 cart"
+                                        data-product_id="<?php echo $row['product_id'];?>">
+                                        <i class="fas fa-cart-plus"></i></a></li>
+                                    </ul>
                             </div>
                         </div>
                         <div class="card-body">

@@ -4,11 +4,12 @@ require 'db_config.php';
 
 // Check if category_id is set in the URL
 if (isset($_GET['category_id'])) {
-    $category_id = (int) $_GET['category_id']; // cast to integer to prevent SQL injection
-    $category_query = "SELECT * FROM Products
-                       INNER JOIN Product_categories USING(category_id)
-                       INNER JOIN ratings USING(product_id)
-                       WHERE category_id = $category_id";
+    $category_id = $_GET['category_id']; 
+    $category_query = "select *, round(avg(rating)) 
+    as `Average rating` from ratings 
+    right join products using(product_id) 
+    where Category_id ='$category_id'
+    group by products.product_name order by avg(rating) desc";
     $exec_query = mysqli_query($conn, $category_query);
     $results_arr = mysqli_fetch_all($exec_query, MYSQLI_ASSOC);
 }
@@ -34,13 +35,13 @@ if (isset($_GET['category_id'])) {
                     <div class="card rounded-0">
                         <img style="height: 400px;" class="card-img rounded-0 img-fluid" src="data:image/png;base64,<?php echo $product_image; ?>" alt="<?php echo $product_name; ?>">
                         <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
-                            <ul class="list-unstyled">
-                                <li><a class="btn btn-success text-white" href="shop-single.php"><i class="far fa-heart"></i></a></li>
-                                <li><a class="btn btn-success text-white mt-2" href="shop-single.php"><i class="far fa-eye"></i></a></li>
-                                <li><a class="btn btn-success text-white mt-2 cart" data-product_id="<?php echo $row['product_id'];?>"
-                                >
-                                 <i class="fas fa-cart-plus"></i></a></li>
-                            </ul>
+                        <ul class="list-unstyled">
+                                        <li><a class="btn btn-success text-white wishlist"  data-product_id="<?php echo $row['product_id'];?>"><i class="far fa-heart"></i></a></li>
+                                        <li><a class="btn btn-success text-white mt-2" href="shop-single.php?product_id=<?php echo $row['product_id'];?>"><i class="far fa-eye"></i></a></li>
+                                        <li><a class="btn btn-success text-white mt-2 cart"
+                                        data-product_id="<?php echo $row['product_id'];?>">
+                                        <i class="fas fa-cart-plus"></i></a></li>
+                                    </ul>
                         </div>
                     </div>
                     <div class="card-body">

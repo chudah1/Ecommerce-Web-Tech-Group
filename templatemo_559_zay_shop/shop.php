@@ -1,7 +1,10 @@
 <?php include("./includes/header.php");
     require 'db_config.php';
     $sql = "SELECT * FROM product_categories";
-    $products_sql = "SELECT * FROM `ratings` right join products using(Product_id) order by Rating desc";
+    $products_sql = "select *, round(avg(rating)) 
+             as `Average rating` from ratings 
+             right join products using(product_id) 
+             group by products.product_name order by `Average rating` desc";
     $results = mysqli_query($conn, $sql);
     $products_result = mysqli_query($conn, $products_sql);
 
@@ -24,10 +27,16 @@
                             <?php echo $row["category_name"]; ?>
                             <i class="fa fa-fw fa-chevron-circle-down mt-1"></i>
                         </a>
+                        <?php $category =  $row['category_id'];
+                         $query = "SELECT product_name from products where Category_id = $category order by Unit_price LIMIT 3";
+                         $exec_query = mysqli_query($conn, $query);
+                         ?>
                         <ul class="collapse show list-unstyled pl-3">
-                            <li><a class="text-decoration-none" href="#"> to be decided</a></li>
-                            <li><a class="text-decoration-none" href="#"> to be decided</a></li>
-                            <li><a class="text-decoration-none" href="#">To be decided</a></li>
+                             <?php while($product = mysqli_fetch_assoc($exec_query)): ?>
+
+                            <li><a class="text-decoration-none" href="#"><?php echo $product["product_name"];?></a></li>
+                            <?php endwhile; ?>
+
                         </ul>
                     </li>
                     <?php endwhile; ?>
@@ -38,6 +47,18 @@
             </div>
 
             <div class="col-lg-9">
+            <div class="row">
+                    <div class="col-md-6 pb-4 form-control4">
+                        <div class="d-flex">
+                            <div class="input-group rounded">
+                      <input type="search" class="rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" id="search" />
+                      <span class="input-group-text border-0">
+                        <i class="fas fa-search"></i>
+                      </span>
+                    </div>
+                        </div>
+                    </div>
+                </div>
                 <?php if($products_result): ?>
                 <div class="row">
                     <?php while($row=mysqli_fetch_assoc($products_result)): ?>
@@ -45,12 +66,12 @@
 
                     
                     <div class="col-md-4">
-                        <div class="card mb-4 product-wap rounded-0">
+                        <div class="card mb-4 product-wap rounded-0 pdt_item">
                             <div class="card rounded-0">
-                                <img style="height:300px;" class="card-img rounded-0 img-fluid" src="data:image/png;base64,<?php echo $product_img;?>">
+                                <img style="height:300px;" class="card-img rounded-0 img-fluid" src="data:image/jpeg;base64,<?php echo $product_img;?>">
                                 <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                                     <ul class="list-unstyled">
-                                        <li><a class="btn btn-success text-white" href="shop-single.php"><i class="far fa-heart"></i></a></li>
+                                        <li><a class="btn btn-success text-white wishlist"  data-product_id="<?php echo $row['product_id'];?>"><i class="far fa-heart"></i></a></li>
                                         <li><a class="btn btn-success text-white mt-2" href="shop-single.php?product_id=<?php echo $row['product_id'];?>"><i class="far fa-eye"></i></a></li>
                                         <li><a class="btn btn-success text-white mt-2 cart"
                                         data-product_id="<?php echo $row['product_id'];?>">
@@ -59,7 +80,7 @@
                                 </div>
                             </div>
                             <div class="card-body">
-                                <a href="shop-single.php" class="h3 text-decoration-none"><?php echo $row["Product_name"];?></a>
+                                <a href="shop-single.php" class="h3 text-decoration-none pdt_title"><?php echo $row["Product_name"];?></a>
                                 <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
                                     <li class="pt-2">
                                         <span class="product-color-dot color-dot-red float-left rounded-circle ml-1"></span>
@@ -86,19 +107,7 @@
                 
                
                 </div>
-                <!-- <div div="row">
-                    <ul class="pagination pagination-lg justify-content-end">
-                        <li class="page-item disabled">
-                            <a class="page-link active rounded-0 mr-3 shadow-sm border-top-0 border-left-0" href="#" tabindex="-1">1</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link rounded-0 mr-3 shadow-sm border-top-0 border-left-0 text-dark" href="#">2</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link rounded-0 shadow-sm border-top-0 border-left-0 text-dark" href="#">3</a>
-                        </li>
-                    </ul>
-                </div> -->
+          
             </div>
 
         </div>
@@ -108,5 +117,25 @@
     <!-- Start Footer  (remove all links)-->
     <?php include("./includes/footer.php");?>
     <script src="assets/js/custom.js"></script>
+    <script>
+     let search_btn = document.getElementById("search");
+     console.log(search_btn)
+      let cards = document.getElementsByClassName("pdt_item");
+      search_btn.addEventListener("keyup", (e)=>{
+        let search_query = e.target.value.toLowerCase();
+        console.log(search_query)
+
+        for(let card of cards){
+            let title = card.querySelector(".pdt_title").textContent.toLowerCase();
+            if(title.includes(search_query)){
+                card.style.display = "block";
+            }
+            else{
+                card.style.display = "none";
+            }
+        }
+      })
+
+    </script>
 </body>
 </html>
