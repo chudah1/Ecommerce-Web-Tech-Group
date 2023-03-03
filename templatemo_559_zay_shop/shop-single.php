@@ -1,12 +1,6 @@
 <?php include "./includes/header.php";
 require 'db_config.php';
 
-if (!isset($_SESSION["user_id"])) {
-    echo "<script>
-    alert('Please login to view the page')
-    window.location.href='login.php'
-    </script>";
-}
 $single_product_id = $_GET['product_id'];
 $sql = "SELECT * FROM RATINGS RIGHT JOIN PRODUCTS USING(product_id) 
 inner join product_categories using(category_id) inner join brands using(brand_id) 
@@ -66,17 +60,7 @@ $query = mysqli_query($conn, $related_products);
                         <form id="cart_form">
                             <input type="hidden" name="product_id" id="product_id" value="<?php echo $single_product_id; ?>">
                             <div class="row">
-                                <!-- <div class="col-auto">
-                                        <ul class="list-inline pb-3">
-                                            <li class="list-inline-item">Size :
-                                                <input type="hidden" name="product-size" id="product-size" value="S">
-                                            </li>
-                                            <li class="list-inline-item"><span class="btn btn-success btn-size">S</span></li>
-                                            <li class="list-inline-item"><span class="btn btn-success btn-size">M</span></li>
-                                            <li class="list-inline-item"><span class="btn btn-success btn-size">L</span></li>
-                                            <li class="list-inline-item"><span class="btn btn-success btn-size">XL</span></li>
-                                        </ul>
-                                    </div> -->
+                            
                                 <div class="col-auto">
                                     <ul class="list-inline pb-3">
                                         <li class="list-inline-item text-right">

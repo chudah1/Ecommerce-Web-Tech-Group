@@ -1,4 +1,6 @@
-<?php require '../db_config.php' ?>
+<?php require '../db_config.php';
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -60,17 +62,13 @@
               </a>
             </li>
 
-            <li class="nav-item">
-              <a class="nav-link" href="accounts.html">
-                <i class="far fa-user"></i> Accounts
-              </a>
-            </li>
+           
             
           </ul>
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link d-block" href="login.html">
-                Admin, <b>Logout</b>
+              <a class="nav-link d-block">
+                <?php echo $_SESSION["fname"]; ?>
               </a>
             </li>
           </ul>

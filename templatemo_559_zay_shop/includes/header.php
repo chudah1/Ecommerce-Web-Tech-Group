@@ -159,7 +159,6 @@ require "db_config.php"
                     $total = 0;
                     ?>
 
-                    <?php if ($result) : ?>
                         <div class="modal-body">
                             <table class="table table-image" id="myTable">
                                 <thead>
@@ -213,7 +212,6 @@ require "db_config.php"
                         <button type="button" class="btn btn-success" onclick="window.location.href='ratings.php';">Checkout</button>
                     </div>
             </div>
-        <?php endif; ?>
         </div>
     </div>
     <!-- End of Cart Modal-->

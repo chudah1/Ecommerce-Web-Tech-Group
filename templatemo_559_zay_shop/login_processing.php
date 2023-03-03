@@ -26,8 +26,17 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
             session_start();
             $_SESSION["fname"] =  $result_arr["fname"];
             $_SESSION["user_id"] = $result_arr["customer_id"];
+            $_SESSION["user_role"] = $result_arr["customer_role"];
+
             $response['success'] =  true;
             $response['message'] =  "logged in successful";
+            if($_SESSION["user_role"]==1){
+                $response["location"] = "./Tranquillo Admin/products.php";
+            }
+            else{
+                $response["location"] = "login.php";
+
+            }
         }
         else{
             $response["message"]="Password is incorrect";

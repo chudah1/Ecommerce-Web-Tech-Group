@@ -49,7 +49,7 @@ login_form.addEventListener("submit", (e) => {
     .then(data => {
         if (data.success) {
             alert("logged in successsful")
-            window.location.href = "index.php";
+            window.location.href = data.location;
         } else {
             // Display error message to the user
             alert(data.message);

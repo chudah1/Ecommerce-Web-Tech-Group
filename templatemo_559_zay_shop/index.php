@@ -1,9 +1,10 @@
 <?php
-include './includes/header.php';
+
+include("includes/header.php");
 ?>
 
-<!-- Start Banner Hero -->
-<!-- 3 slides -->
+
+
 <div id="template-mo-zay-hero-carousel" class="carousel slide" data-bs-ride="carousel">
     <ol class="carousel-indicators">
         <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="0" class="active"></li>
