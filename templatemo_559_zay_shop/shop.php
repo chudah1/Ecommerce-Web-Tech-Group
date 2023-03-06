@@ -119,11 +119,9 @@
     <script src="assets/js/custom.js"></script>
     <script>
      let search_btn = document.getElementById("search");
-     console.log(search_btn)
       let cards = document.getElementsByClassName("pdt_item");
       search_btn.addEventListener("keyup", (e)=>{
         let search_query = e.target.value.toLowerCase();
-        console.log(search_query)
 
         for(let card of cards){
             let title = card.querySelector(".pdt_title").textContent.toLowerCase();

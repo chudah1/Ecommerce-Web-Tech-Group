@@ -270,7 +270,7 @@ require "db_config.php"
 
                                     <td>
                                         <a class="btn btn-danger btn-sm td_close vertical_align wish_remove"
-                                        data-action="remove" data-product_id="<?php echo $row['product_id']; ?>"> 
+                                        data-action="remove" data-product_id="<?php echo $row['Product_id']; ?>"> 
                                          
                                             <i class="fa fa-times"></i>
                                         </a>

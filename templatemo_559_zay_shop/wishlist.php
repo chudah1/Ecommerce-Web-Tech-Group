@@ -24,12 +24,10 @@ else{
 header('Content-Type: application/json');
 echo json_encode($response);
 }
-
-   
-
+  
 else{
      
-    $delete_query = "delete from wishlist where Customer_id='$customer_id' and Product_id='$product_id'";
+    $delete_query = "Delete from wishlist where Customer_id='$customer_id' and Product_id='$product_id'";
     if(mysqli_query($conn, $delete_query)){
         $response["success"]=true;
         $response["message"]="Removed from wishlist successfully";
